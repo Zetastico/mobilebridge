@@ -1,0 +1,37 @@
+# Entornos y secretos
+.env
+.env.*
+!.env.example
+
+# Control de versiones
+.git
+.github
+.gitignore
+
+# Dependencias locales (se instalan durante el build de Docker)
+node_modules
+vendor
+
+# Logs y caches efímeros locales
+storage/logs/*
+storage/framework/cache/*
+storage/framework/sessions/*
+storage/framework/views/*
+!storage/logs/.gitignore
+!storage/framework/cache/.gitignore
+!storage/framework/sessions/.gitignore
+!storage/framework/views/.gitignore
+
+# Pruebas y herramientas de desarrollo local
+tests
+.phpunit.result.cache
+phpunit.xml
+.editorconfig
+
+# Archivos de Docker y orquestación
+Dockerfile
+.dockerignore
+render.yaml
+
+# Documentación innecesaria en la imagen de producción
+*.md

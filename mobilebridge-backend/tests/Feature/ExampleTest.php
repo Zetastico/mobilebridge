@@ -17,4 +17,11 @@ class ExampleTest extends TestCase
         $response->assertStatus(302);
         $response->assertRedirect('/login');
     }
+
+    public function test_health_check_up_endpoint_returns_ok(): void
+    {
+        $response = $this->get('/up');
+
+        $response->assertStatus(200);
+    }
 }
