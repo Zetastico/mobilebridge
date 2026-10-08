@@ -28,9 +28,12 @@ php artisan route:clear || true
 php artisan view:clear || true
 
 # Ejecutar migraciones si se especificó AUTO_MIGRATE=true
-if [ "$AUTO_MIGRATE" = "true" ] || [ "$RUN_MIGRATIONS" = "true" ]; then
+if [ "$AUTO_MIGRATE" = "true" ]; then
     echo "Ejecutando migraciones de base de datos contra Supabase..."
-    php artisan migrate --force --no-interaction || true
+    php artisan migrate --force --no-interaction
+    echo "Migraciones completadas correctamente."
+else
+    echo "AUTO_MIGRATE no está habilitado. Se omiten las migraciones."
 fi
 
 # Optimizar rutas y vistas para producción si existe APP_KEY
